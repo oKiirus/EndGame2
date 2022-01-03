@@ -1325,26 +1325,33 @@ pop()
   }
 
   if (gamestate === 'Gfade') {
-    fill(0, Tr)
+
+    textAlign(CENTER)
+    textSize(100)
+    fill(255)
     
-    image(lvlUp, 0, 0, windowWidth, windowHeight)
+    image(lvlUp, windowWidth / 4, windowHeight / 4, windowWidth / 2, windowHeight / 2)
 
     if(gamenum === 2){
-      image(S1, windowWidth / 6, windowHeight / 8 )
+      image(S1, windowWidth / 6, windowHeight / 4 * 3)
+      text('Collected Rocket Stabilizers, 3 parts remaining!', windowWidth / 2, windowHeight / 5)
     } else if(gamenum === 3){
-      image(S1, windowWidth / 6, windowHeight / 8 )
-      image(S2, windowWidth / 6 * 2, windowHeight / 8 )
+      image(S1, windowWidth / 6, windowHeight / 4 * 3 )
+      image(S2, windowWidth / 6 * 2, windowHeight / 4 * 3 )
+      text('Collected Rocket Docks, 2 parts remaining!', windowWidth / 2, windowHeight / 5)
     } else if(gamenum === 4){
-      image(S1, windowWidth / 6, windowHeight / 8 )
-      image(S2, windowWidth / 6 * 2, windowHeight / 8 )
-      image(S3, windowWidth / 6 * 4, windowHeight / 8 )
+      image(S1, windowWidth / 6, windowHeight / 4 * 3 )
+      image(S2, windowWidth / 6 * 2, windowHeight / 4 * 3 )
+      image(S3, windowWidth / 6 * 4, windowHeight / 4 * 3 )
+      text('Collected Rocket Hull, 1 part remaining!', windowWidth / 2, windowHeight / 5)
     } else if(gamenum === 5){
-      image(S1, windowWidth / 6, windowHeight / 8 )
-      image(S2, windowWidth / 6 * 2, windowHeight / 8 )
-      image(S3, windowWidth / 6 * 4, windowHeight / 8 )
-      image(S4, windowWidth / 6 * 5, windowHeight / 8 )
+      image(S1, windowWidth / 6, windowHeight / 4 * 3 )
+      image(S2, windowWidth / 6 * 2, windowHeight / 4 * 3 )
+      image(S3, windowWidth / 6 * 4, windowHeight / 4 * 3 )
+      image(S4, windowWidth / 6 * 5, windowHeight / 4 * 3 )
+      text('Collected Rocket Blasters, 0 parts remaining!', windowWidth / 2, windowHeight / 5)
     }
-    Tr += 5
+    Tr += 3
 
     if (Tr >= 255) {
       gamestate = 'S' + gamenum
